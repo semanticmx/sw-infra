@@ -6,7 +6,6 @@ services:
 
     platform: linux/x86_64
 
-    image: arm64v8/wordpress:apache
 
     restart: always
     ports:
