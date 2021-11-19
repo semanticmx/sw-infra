@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   wordpress:
-    image: wordpress
+    image: arm64v8/wordpress:apache
     restart: always
     ports:
       - 8080:80
