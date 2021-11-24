@@ -7,7 +7,6 @@ services:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      platform: linux/x86_64
       MYSQL_ROOT_PASSWORD: somewordpress
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
