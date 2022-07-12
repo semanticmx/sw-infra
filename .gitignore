@@ -1,4 +1,7 @@
-wp-theme
+clients-theme/*
+clients-plugins/*
+clients-db/*
+clients-uploads/*
 
 production.yml
 
@@ -9,3 +12,5 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+
+.idea

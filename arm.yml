@@ -18,7 +18,8 @@ services:
     image: arm64v8/wordpress:apache
     volumes:
       - wordpress_data:/var/www/html
-      - ./wp-theme:/var/www/html/wp-content/themes/
+      - ./clients-theme:/var/www/html/wp-content/themes/
+      - ./clients-plugins/wp-theme-almex:/var/www/html/wp-content/plugins/
     ports:
       - "3100:80"
     restart: always
@@ -37,6 +38,16 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     command: /start
+  composer:
+    depends_on:
+      - wordpress
+    restart: 'no'
+    container_name: composer
+    image: composer:1.10.12
+    working_dir: /var/www/html
+    command: composer update -d /var/www/html/wp-content/themes/almex-theme
+    volumes:
+      - ./clients-theme:/var/www/html/wp-content/themes/
 volumes:
   db_data: {}
   wordpress_data: {}
